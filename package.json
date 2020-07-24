@@ -1,0 +1,26 @@
+{
+  "name": "gia",
+  "version": "0.1.0",
+  "description": "A simple Typescript Twitch bot for randomizing giveaways",
+  "repository": "git@github.com:papey/gia.git",
+  "author": "papey",
+  "license": "Unlicense",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "start": "node dist/main.js"
+  },
+  "dependencies": {
+    "got": "^11.5.1",
+    "tmi.js": "^1.5.0",
+    "yargs": "^15.4.1"
+  },
+  "devDependencies": {
+    "@types/got": "^9.6.11",
+    "@types/node": "^14.0.23",
+    "@types/tmi.js": "^1.4.0",
+    "@types/yargs": "^15.0.5",
+    "typescript": "^3.9.7",
+    "yamljs": "^0.3.0"
+  }
+}

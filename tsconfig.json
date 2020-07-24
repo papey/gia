@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": "src",
+    "experimentalDecorators": true,
+    "typeRoots": ["./node_modules/@types"],
+    "sourceMap": true,
+    "allowJs": true
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["./dist", "./node_modules"]
+}

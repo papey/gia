@@ -1,0 +1,8 @@
+username: "user"
+password: "token"
+prefix: "!"
+clientID: "client id"
+channelID: "channel id"
+channels: ["channel"]
+admins: ["user1", "user2"]
+debug: false
