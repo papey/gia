@@ -4,6 +4,7 @@ const tmi = require("tmi.js");
 import { Client } from "tmi.js";
 import { getAllFollowers } from "./followers";
 import { Config } from "./config";
+import * as log from "log4js";
 
 // Main bot class
 export class Gia {
@@ -11,6 +12,8 @@ export class Gia {
   client: Client;
   // Config struct
   config: Config;
+
+  private logger: log.Logger;
 
   constructor(configPath: string) {
     this.config = new Config(configPath);
@@ -26,19 +29,22 @@ export class Gia {
       },
       channels: this.config.channels,
     });
+
+    this.logger = log.getLogger("bot");
+    this.logger.level = "info";
   }
 
   // run the bot instance
   public run() {
-    console.info("Running the bot instance");
+    this.logger.info("Running the bot instance");
     this.plug();
-    console.info("Connect the bot instance");
+    this.logger.info("Connect the bot instance");
     this.client.connect();
   }
 
   // map event to functions
   plug() {
-    console.info("Plug functions to associated events");
+    this.logger.info("Plug functions to associated events");
     this.client.on("join", (channel, _, isSelf) => {
       if (!isSelf) {
         return;
@@ -61,7 +67,7 @@ export class Gia {
             .catch((e: Error) => this.client.say(channel, e.message))
             .then((f) => {
               const winner = f[(f.length * Math.random()) | 0];
-              console.info(`Selected winner: ${winner}`);
+              this.logger.info(`Selected winner: ${winner}`);
               this.client.say(channel, `And the winner is ${winner} !`);
             });
         } else {
