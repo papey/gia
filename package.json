@@ -13,7 +13,7 @@
     "got": "^11.5.1",
     "log4js": "^6.3.0",
     "tmi.js": "^1.5.0",
-    "yargs": "^15.4.1"
+    "yargs": "^16.0.3"
   },
   "devDependencies": {
     "@types/got": "^9.6.11",
