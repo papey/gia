@@ -1,6 +1,6 @@
 # Stage 1 : Build
 # From latest node version
-FROM bearstech/node-dev:12 as builder
+FROM bearstech/node-dev:14 as builder
 
 # Declare args
 ARG REVISION
@@ -26,7 +26,7 @@ COPY . .
 RUN yarn build
 
 # Stage 2 : run !
-FROM bearstech/node:12
+FROM bearstech/node:14
 
 # image-spec annotations using labels
 # https://github.com/opencontainers/image-spec/blob/master/annotations.md
@@ -45,7 +45,8 @@ RUN mkdir /opt/gia
 WORKDIR /opt/gia
 
 COPY --from=builder /opt/gia/dist ./dist
-COPY --from=builder /opt/gia/node_modules ./node_modules
+COPY --from=builder /opt/gia/package.json .
+RUN npm install --only=production
 
 USER gia
 
