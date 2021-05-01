@@ -1,6 +1,6 @@
 {
   "name": "gia",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A simple Typescript Twitch bot for randomizing giveaways",
   "repository": "git@github.com:papey/gia.git",
   "author": "papey",
