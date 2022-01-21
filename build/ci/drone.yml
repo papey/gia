@@ -3,7 +3,7 @@ name: main
 
 steps:
   - name: build
-    image: bearstech/node-dev:12
+    image: bearstech/node-dev:16
     commands:
       - yarn
       - yarn build
