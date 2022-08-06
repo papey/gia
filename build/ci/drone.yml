@@ -3,7 +3,7 @@ name: main
 
 steps:
   - name: build
-    image: bearstech/node-dev:16
+    image: node:lts-buster
     commands:
       - yarn
       - yarn build
