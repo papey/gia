@@ -10,7 +10,7 @@
     "start": "node dist/main.js"
   },
   "dependencies": {
-    "got": "^12.3.0",
+    "got": "^11.8.5",
     "log4js": "^6.3.0",
     "tmi.js": "^1.5.0",
     "yamljs": "^0.3.0",
